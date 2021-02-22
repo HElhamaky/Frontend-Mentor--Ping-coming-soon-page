@@ -1,0 +1,121 @@
+.page {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+
+  &__logo {
+    margin: 3rem 0 2rem 0;
+  }
+
+  &__copy {
+    h1 {
+      font-weight: 700;
+      font-size: $Body-font;
+      span {
+        font-weight: 300;
+        opacity: 50%;
+      }
+    }
+    p {
+      font-size: $font-sm;
+    }
+
+    @include breakpoint-up(medium) {
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: $Body-font;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .form {
+    margin: 1rem auto 2rem auto;
+    max-width: 30rem;
+    &__input {
+      background-color: white;
+      border: solid 2px $PaleBlue;
+      border-radius: 2rem;
+      height: 2.5rem;
+      width: 85%;
+      margin-bottom: 0.5rem;
+      outline: none;
+      padding-left: 2rem;
+      &::placeholder {
+        color: $Gray;
+        opacity: 50%;
+        font-family: inherit;
+      }
+    }
+
+    &__input__error {
+      font-size: $font-err;
+      color: red;
+      display: none;
+      p {
+        margin-top: 0.2rem;
+      }
+    }
+
+    &__button {
+      background-color: $Blue;
+      border: none;
+      border-radius: 2rem;
+      height: 2.5rem;
+      width: 85%;
+      margin-top: 0.3rem;
+      color: white;
+      font-weight: 600;
+      outline: none;
+
+      &:hover {
+        background-color: hsl(224, 87%, 70%);
+      }
+    }
+
+    @include breakpoint-up(medium) {
+      display: flex;
+      .email__input {
+        flex: 5 0 0;
+        input {
+          width: 100%;
+          margin: 0;
+        }
+        P {
+          text-align: left;
+          padding-left: 1rem;
+        }
+      }
+
+      .email__button {
+        flex: 3 0 0;
+        input {
+          margin: 0;
+        }
+      }
+    }
+    .visible {
+      display: block;
+    }
+  }
+
+  &__banner {
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 30rem;
+    img {
+      width: 100%;
+    }
+
+    @include breakpoint-up(medium) {
+      max-width: 50rem;
+    }
+  }
+}
